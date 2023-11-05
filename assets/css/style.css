@@ -9,10 +9,12 @@ html {
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 1.6rem;
+    color: var(--primary-color);
+    font-style: normal;
 }
 :root {
-    --primary-color: "";
-    --secondary-color: "";
+    --primary-color: #696d76;
+    --secondary-color: #212832;
 }
 h1,
 h2,
@@ -20,8 +22,12 @@ h3,
 h4,
 h5,
 h6 {
-    color: #212832;
+    color: var(--secondary-color);
 }
+a {
+    text-decoration: none;
+}
+a,
 input,
 textarea,
 button,
@@ -38,6 +44,20 @@ select {
     max-width: calc((100% - 48px));
     margin: 0 auto;
 }
+.section-label {
+    display: flex;
+    align-items: center;
+    line-height: 1.75rem; /* 175% */
+}
+.section-label::before {
+    display: block;
+    left: 0;
+    content: "";
+    width: 18px;
+    height: 2px;
+    background: #696d77;
+    margin-right: 12px;
+}
 .section-heading {
     margin-top: var(--margin-top, 12px);
     font-size: 4rem;
@@ -45,14 +65,13 @@ select {
     line-height: 1.25; /* 125% */
 }
 .section-desc {
-    color: #696d76;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-style: normal;
     font-weight: 400;
     line-height: 1.67; /* 166.667% */
 }
 .btn {
-    background-color: var(--bg-color, #212832);
+    background-color: var(--secondary-color);
     min-width: var(--min-witdh, 113px);
     color: var(--color, #fff);
     padding: 15px 30px;
@@ -60,4 +79,179 @@ select {
     border: none;
     outline: none;
     cursor: pointer;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+.d-flex {
+    display: flex;
+}
+.d-grid {
+    display: grid;
+}
+.center {
+    align-items: center;
+    justify-content: center;
+}
+.center-x {
+    justify-content: center;
+}
+.center-y {
+    align-items: center;
+}
+
+/* HEADER */
+.header__inner {
+    padding-top: 42px;
+    grid-template-columns: auto 1fr auto;
+}
+.navbar__list {
+    margin-left: 70px;
+    column-gap: 48px;
+}
+.navbar__item {
+    position: relative;
+}
+.navbar__item:hover,
+.navbar__item--active {
+    text-shadow: 1px 0 0 currentColor;
+    color: var(--secondary-color);
+}
+.navbar__item:hover.navbar__item::before,
+.navbar__item--active::before {
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-radius: 4px;
+    background: #7264d6;
+}
+.header__login {
+    color: var(--secondary-color);
+    font-weight: 600;
+    line-height: 2.8rem; /* 175% */
+    margin-right: 28px;
+}
+.header__login:hover {
+    text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+    margin-top: 76px;
+}
+.hero__inner {
+    grid-template-columns: 1fr 1fr;
+}
+.hero__content {
+    padding-right: 60px;
+}
+.hero__heading {
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 7rem; /* 116.667% */
+    margin-top: 12px;
+}
+.hero__heading strong {
+    color: #7264d6;
+}
+.hero__desc {
+    font-size: 1.8rem;
+    margin-top: 20px;
+}
+.subcribe-wrap {
+    margin-top: 40px;
+}
+.subcribe-form {
+    width: 540px;
+    height: 74px;
+    padding: 8px;
+    border-radius: 0.8rem;
+    background: #fff;
+    box-shadow: 0px 16px 42px 0px rgba(0, 0, 0, 0.07);
+}
+.subcribe-form__input {
+    flex-grow: 1;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+}
+.subcribe-form__btn {
+    background-color: #7264d6;
+    font-weight: 600;
+    line-height: 1.75; /* 175% */
+}
+.subcribe__label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.hero__media {
+    position: relative;
+}
+.hero__img {
+    display: block;
+    width: 296px;
+    margin-left: 100px;
+}
+.deposite {
+    position: absolute;
+    top: 113px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #31456a;
+    width: 174px;
+    height: 46px;
+    padding: 16px 10px;
+    border-radius: 0.6rem;
+    background: #fff;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.07);
+}
+.deposite strong {
+    color: #4ab5e3;
+    line-height: 1; /* 100% */
+    margin-left: 19px;
+    font-weight: normal;
+}
+.interest {
+    position: absolute;
+    right: 0;
+    top: 127px;
+    flex-direction: column;
+    width: 13rem;
+    height: 13rem;
+    flex-shrink: 0;
+    background-color: #da6464;
+    color: #fff;
+    border-radius: 50%;
+}
+.interest strong {
+    font-size: 4.4rem;
+    font-weight: 600;
+}
+.funds {
+    position: absolute;
+    right: 100px;
+    bottom: 61px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-wrap: nowrap;
+    grid-template-columns: auto 1fr;
+    column-gap: 11px;
+    width: 124px;
+    height: 68px;
+    padding: 20px 15px;
+    border-radius: 1rem;
+    background: #439f90;
+    color: #fff;
+}
+.funds strong {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
