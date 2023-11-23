@@ -702,3 +702,59 @@ select {
     bottom: 49px;
     right: 166px;
 }
+
+/* FOOTER */
+.footer {
+    margin-top: 100px;
+}
+.footer__row--top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 100px;
+}
+.footer__heading {
+    color: #212832;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.footer__item {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 16px;
+    line-height: 1.67;
+}
+.footer__heading--bottom {
+    margin-top: 48px;
+}
+.footer-form {
+    margin-top: 24px;
+    padding: 0;
+    column-gap: 20px;
+}
+.footer-form__input {
+    width: 270px;
+    height: 52px;
+    padding: 12px;
+    flex-grow: 0;
+    border: 1px solid #8e919a;
+    border-radius: 6px;
+    outline: none;
+}
+.footer-form__btn {
+    height: 52px;
+    font-weight: 600;
+    background: #7264d6;
+    color: #fff;
+}
+.footer__row--bottom {
+    padding-bottom: 28px;
+    margin-top: 70px;
+    display: flex;
+    column-gap: 100px;
+}
+.footer__coppyright {
+    background: #7264d6;
+    color: #fff;
+    padding: 28px 0;
+    text-align: center;
+}
